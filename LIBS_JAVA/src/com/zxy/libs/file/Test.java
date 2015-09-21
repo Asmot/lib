@@ -75,7 +75,7 @@ public class Test {
 	}
 	
 	
-	public static FileDeleteListener fileDeleteListener = new FileDeleteListener() {
+	public static IDeleteFileListener fileDeleteListener = new IDeleteFileListener() {
 		
 		@Override
 		public void onDeleteStart(String fileName) {
@@ -104,7 +104,7 @@ public class Test {
 		}
 	};
 	
-	public static FileUnZipListener fileUnZipListener = new FileUnZipListener() {
+	public static IUnZipListener fileUnZipListener = new IUnZipListener() {
 		
 		@Override
 		public void onUnzipSchedule(String fileName, float complete) {
@@ -136,7 +136,7 @@ public class Test {
 		}
 	};
 	
-	public static FileCopyListener fileCopyListener = new FileCopyListener() {
+	public static ICopyFileListener fileCopyListener = new ICopyFileListener() {
 		
 		@Override
 		public void onProgress(String inName, String outName, float completeCode) {

@@ -1,6 +1,6 @@
 package com.zxy.libs.file;
 
-public interface FileCopyListener {
+public interface ICopyFileListener {
 	public void onCopyStart(String inName, String outName);
 	public void onProgress(String inName, String outName,float completeCode);
 	public void onCopyFinish(String inName, String outName);

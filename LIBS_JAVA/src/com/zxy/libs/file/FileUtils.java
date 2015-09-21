@@ -200,7 +200,7 @@ public class FileUtils {
 	 */
 	public static long copyDirectoryWithCallback(File sourceLocation,
 			File targetLocation, long sizeOfCopiedFiles, long sizeOfDirectory,
-			FileCopyListener listener) {
+			ICopyFileListener listener) {
 		if (sizeOfCopiedFiles <= 0) {
 			System.err
 					.println("sizeOfDirectory is the total Size,  must be a positive number");
@@ -372,13 +372,13 @@ public class FileUtils {
 	}
 
 	public static void deleteFileWithCallBack(File dir,
-			FileDeleteListener listener) {
+			IDeleteFileListener listener) {
 		int totalCount = (int) getTotalFileAndDirCount(dir);
 		deleteFileWithCallBack(dir, totalCount, listener);
 	}
 
 	public static void deleteFileWithCallBack(File dir, int totalCount,
-			FileDeleteListener listener) {
+			IDeleteFileListener listener) {
 		int deletedCount = 0;
 		if (listener != null) {
 			listener.onDeleteStart(dir.getAbsolutePath());
@@ -395,7 +395,7 @@ public class FileUtils {
 	 * @return
 	 */
 	private static int deleteFileWithCallBack(File dir, int deletedCount,
-			int totalCount, FileDeleteListener listener) {
+			int totalCount, IDeleteFileListener listener) {
 		String name = dir.getAbsolutePath();
 		if ((dir == null || !dir.exists()) && listener != null) {
 			listener.onDeleteError(name);
@@ -441,7 +441,7 @@ public class FileUtils {
 	 * @param flag
 	 */
 	private static void judgeToCallbackDeleteState(int deletedCount,
-			int totalCount, FileDeleteListener listener, String name,
+			int totalCount, IDeleteFileListener listener, String name,
 			boolean flag) {
 //		System.out.println(deletedCount + " , " + totalCount + " flag:" + flag);
 		if(listener != null) {
@@ -554,7 +554,7 @@ public class FileUtils {
 	 * @throws Exception
 	 */
 	public static void UnZipFileWithCallback(String zipFile, String directory,
-			FileUnZipListener listener) {
+			IUnZipListener listener) {
 		ZipInputStream zis = null;
 		FileInputStream fileinputZip = null;
 		File file;

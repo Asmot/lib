@@ -1,6 +1,6 @@
 package com.zxy.libs.file;
 
-public interface FileDeleteListener {
+public interface IDeleteFileListener {
 	 /**
      * É¾³ý¿ªÊ¼
      */

@@ -1,6 +1,6 @@
 package com.zxy.libs.file;
 
-public interface FileUnZipListener {
+public interface IUnZipListener {
 
     /**
      * ½âÑ¹¿ªÊ¼

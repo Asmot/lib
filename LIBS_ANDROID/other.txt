@@ -1,0 +1,4 @@
+==============##================
+在windows系统下，library project必须和project处于相同的盘符中，因为如果在不同盘符，
+project.properties中的android.library.reference.1值变成绝对路径，而ADT推荐是在ubuntu下使用的，对windows绝对路径有支持bug。
+==============##================
